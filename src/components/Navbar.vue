@@ -39,10 +39,10 @@ export default {
 <style scoped>
 
 #nav {
-  background-color:white;
-  margin: 0px;
+  background-color:rgb(245, 237, 238);
+  margin-bottom: 20px;
   padding: 0px;
-  height: 70px;
+  height: 80px;
 }
 
 
@@ -78,7 +78,7 @@ a:hover{
 }
 
 #nav ul .logo {
-  margin: 5px 20px 5px -45px;
+  margin: 5px 20px 5px 10px;
   font-size: 35px;
 }
 
