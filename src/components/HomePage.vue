@@ -126,7 +126,7 @@ export default {
     let result = await axios.get("https://fakestoreapi.com/products?limit=18");
     console.log(result);
     this.items = result.data;
-  },
+  }
 };
 </script>
 

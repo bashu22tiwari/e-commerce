@@ -1,20 +1,21 @@
 <template>
   <Navbar />
   <!-- <PhotoSlider /> -->
-  <HomePage />
+  <!-- <HomePage /> -->
+  <router-view></router-view>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
 // import PhotoSlider from './components/PhotoSlider.vue'
-import HomePage from './components/HomePage.vue'
+// import HomePage from './components/HomePage.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
     // PhotoSlider
-    HomePage
+    // HomePage
   }
 }
 </script>

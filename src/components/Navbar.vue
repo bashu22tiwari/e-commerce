@@ -2,29 +2,29 @@
     <div id="nav">
       <ul>
         <li class="logo">
-          <a href="">LOGO</a>
+          <router-link to="/">LOGO</router-link>
         </li>
         <li>
-          <a href="">MEN</a>
+          <router-link :to="{ name: 'Category', params: { category: men } }">MEN</router-link>
         </li>
         <li>
-          <a href="">WOMEN</a>
+          <router-link :to="{ name: 'Category', params: { category: women } }">WOMEN</router-link>
         </li>
         <li>
-          <a href="">ELECTRONICS</a>
+          <router-link :to="{ name: 'Category', params: { category: 'electronics' } }">ELECTRONICS</router-link>
         </li>
         <li>
-          <a href="">JEWELLERY</a>
+          <router-link :to="{ name: 'Category', params: { category: 'jewelery' } }">JEWELLERY</router-link>
         </li>
         <li class="input">
           <input type="text" placeholder="Search Product" />
           <button>Search</button>
         </li>
         <li>
-          <a href="">SIGN UP</a>
+          <router-link to="/sign-up">SIGN UP</router-link>
         </li>
         <li>
-          <a href="">LOGIN</a>
+          <router-link to="/login">LOGIN</router-link>
         </li>
       </ul>
     </div>
@@ -33,6 +33,12 @@
 <script>
 export default {
   name: "Navbar",
+  data(){
+    return{
+      men: "men's clothing",
+      women: "women's clothing"
+    };
+  }
 };
 </script>
 
