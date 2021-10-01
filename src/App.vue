@@ -2,7 +2,7 @@
   <Navbar />
   <!-- <PhotoSlider /> -->
   <!-- <HomePage /> -->
-  <router-view></router-view>
+  <router-view :key="$route.path"></router-view>
 </template>
 
 <script>

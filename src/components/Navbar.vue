@@ -5,16 +5,16 @@
           <router-link to="/">LOGO</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Category', params: { category: men } }">MEN</router-link>
+          <router-link :to="{ name: 'Category', params: { category: men } }" :key="$route.path">MEN</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Category', params: { category: women } }">WOMEN</router-link>
+          <router-link :to="{ name: 'Category', params: { category: women } }" :key="$route.path">WOMEN</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Category', params: { category: 'electronics' } }">ELECTRONICS</router-link>
+          <router-link :to="{ name: 'Category', params: { category: 'electronics' } }" :key="$route.path">ELECTRONICS</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Category', params: { category: 'jewelery' } }">JEWELLERY</router-link>
+          <router-link :to="{ name: 'Category', params: { category: 'jewelery' } }" :key="$route.path">JEWELLERY</router-link>
         </li>
         <li class="input">
           <input type="text" placeholder="Search Product" />
