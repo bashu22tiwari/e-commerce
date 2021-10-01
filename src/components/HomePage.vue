@@ -10,10 +10,12 @@
         </div>
         
         <div>
-            <a href="">
+            <!-- <router-link :to="{ name: 'CategoryDetail', params: { id: item.id } }"> -->
+              <a>
                 <div>
                     <img :src="item.image" style="height:200px; width:200px; border-radius:20px;">
                 </div>
+            <!-- </router-link> -->
             </a>
         </div>
 
@@ -114,7 +116,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
   name: "HomePage",
   data() {
@@ -135,7 +137,7 @@ export default {
 #HomePage{
   width: 90vw;
   margin: 40px auto;
-  background-color: white;
+  background-color:rgb(214, 226, 209);
   padding: 2px;
   border-radius: 50px;
 }
@@ -161,7 +163,7 @@ export default {
   width: 250px;
     height: 400px;
     margin: 20px;
-    background-color: rgb(196, 231, 240);
+    background-color: rgb(95, 215, 219);
 }
 
 #category {
@@ -180,13 +182,14 @@ export default {
 
 #title{
 line-height: 15px;
+color: black;
 }
 
 #title a{
   text-decoration: none;
-  color: blue;
+  color: black;
   font-weight: 600;
-  text-decoration:underline blue;
+  text-decoration:underline black;
   font-size: 13px;
   
 }
@@ -234,7 +237,7 @@ line-height: 15px;
 }
 
 #HomePage-2{
-  background-color: white;
+  background-color: rgb(214, 226, 209);
   width: 90vw;
   margin: 50px auto;
   border-radius: 50px;

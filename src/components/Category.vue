@@ -10,11 +10,11 @@
         </div>
         
         <div>
-            <a href="">
+            <router-link :to="{ name: 'CategoryDetail', params: { id: item.id } }">
                 <div>
                     <img :src="item.image" style="height:200px; width:200px; border-radius:20px;">
                 </div>
-            </a>
+            </router-link>
         </div>
 
          <div id="price">
@@ -22,9 +22,9 @@
         </div>
 
         <div id="title">
-            <a href="">
+            <router-link :to="{ name: 'CategoryDetail', params: { id: item.id } }">
                 {{ item.title }}
-            </a>
+            </router-link>
         </div>
 
         <div id="footer">
@@ -89,7 +89,7 @@ export default {
 #HomePage{
   width: 90vw;
   margin: 40px auto;
-  background-color: white;
+  background-color: rgb(227, 233, 224);
   padding: 2px;
   border-radius: 50px;
 }
@@ -115,7 +115,7 @@ export default {
   width: 250px;
     height: 400px;
     margin: 20px;
-    background-color: rgb(196, 231, 240);
+    background-color: rgb(95, 215, 219);
 }
 
 #category {
@@ -134,13 +134,14 @@ export default {
 
 #title{
 line-height: 15px;
+color: black;
 }
 
 #title a{
   text-decoration: none;
-  color: blue;
+  color: black;
   font-weight: 600;
-  text-decoration:underline blue;
+  text-decoration:underline black;
   font-size: 13px;
   
 }
