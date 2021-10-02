@@ -55,6 +55,17 @@ export default {
 
 <style scoped>
 
+h1{
+  background-color: rgb(236, 227, 227);
+  padding: 50px;
+  margin-top:80px;
+  width: 50vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto;
+  border-radius: 30px;
+}
+
 #category{
     
     background-color:rgb(236, 227, 227) ;

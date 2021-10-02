@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Adarsh Tiwari",
+      "email": "adarsh@gmail.com",
+      "contact": "123456",
+      "password": "a123"
+    },
+    {
+      "id": 2,
+      "name": "Mukesh Tiwari",
+      "email": "mukesh@gmail.com",
+      "contact": "234566",
+      "password": "m123"
+    },
+    {
+      "name": "grfedws",
+      "email": "gvrfedws@",
+      "contact": "gbvfedw",
+      "password": "gfredw",
+      "id": 3
+    }
+  ]
+}
