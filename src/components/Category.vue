@@ -2,6 +2,20 @@
   
 <div id="HomePage">
   <h1>{{ this.category.toUpperCase() }}</h1>
+
+  <div id="filter">
+    <div id="price-filter">
+      <h3>Price : </h3>
+      <button @click="htlprice">High To Low</button>
+      <button @click="lthprice">Low To High</button>
+    </div>
+
+    <div id="rating-filter">
+      <h3>Ratings : </h3>
+      <button @click="htlrating">High To Low</button>
+      <button @click="lthrating">Low To High</button>
+    </div>    
+  </div>
   
 <div class="container">
     <div class="element" v-for="item in items" :key="item.id">
@@ -80,12 +94,44 @@ export default {
   //         }
   //     }
   // },
+  methods: {
+    htlprice(){
+      this.items.sort((a,b) => {
+        return b.price - a.price
+      })
+      console.log('htl')
+    },
+    lthprice(){
+      this.items.sort((a,b) => {
+        return a.price - b.price;
+      })
+      console.log('lth')
+    },
+    htlrating(){
+      this.items.sort((a,b) => {
+        return b.rating.rate - a.rating.rate
+      })
+      console.log('htlrating')
+    },
+    lthrating(){
+      this.items.sort((a,b) => {
+        return a.rating.rate - b.rating.rate;
+      })
+      console.log('lthrating')
+    }
+  },
   
   
 }
 </script>
 
 <style scoped>
+
+h3{
+  display: inline-block;
+  color: blue;
+}
+
 #HomePage{
   width: 90vw;
   margin: 40px auto;
@@ -116,6 +162,28 @@ export default {
     height: 400px;
     margin: 20px;
     background-color: rgb(95, 215, 219);
+}
+
+#filter{
+  text-align: center;
+  margin: 20px auto;
+}
+
+#filter button{
+  margin: 20px 60px;
+  padding: 5px;
+  font-size: 20px;
+  width: 200px;
+  background-color: rgb(151, 238, 51);
+  color: red;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+}
+
+#filter button:hover{
+  background-color: rgb(151, 235, 223);
+  color: blue;
 }
 
 #category {

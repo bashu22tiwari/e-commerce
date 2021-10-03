@@ -9,7 +9,7 @@
       <form action="">
         <input type="email" v-model="email" placeholder="Enter Your Email Id">
         <input type="password" v-model="password" placeholder="Enter Your Password">
-        <button @click="login">LOG IN</button>
+        <button @click.prevent="login">LOG IN</button>
       </form>  
     </div>
   </div>
@@ -17,7 +17,7 @@
 
 <script>
 
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name:'Login',
@@ -28,9 +28,29 @@ export default {
     }
   },
   methods: {
-        // login(){
-            
-        // }
+        async login(){
+            let result = await axios.get(
+                `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+            )
+            if(result.status==200 && result.data.length>0){
+                this.email=''
+                this.password=''
+                localStorage.setItem('user-info',JSON.stringify(result.data[0]));
+                this.$router.push({name:'HomePage'})
+                alert('Logged In Succesfully');
+            }
+            else{
+                this.email=''
+                this.password=''
+                alert('Please Enter Correct Data')
+            }
+        }
+    },
+    mounted(){
+      if ("user-info" in localStorage) {
+          alert('You are already logged in');
+          this.$router.push({name:'HomePage'})
+      } 
     }
 
 }

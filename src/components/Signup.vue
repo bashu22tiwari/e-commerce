@@ -14,14 +14,14 @@
        
         <input type="password" v-model="password" placeholder="Create Your Password">
         
-        <button @click="signup">SIGN UP</button>
+        <button @click.prevent="signup">SIGN UP</button>
       </form> 
     </div>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name:'Signup',
@@ -34,18 +34,35 @@ export default {
     }
   },
   methods: {
-    signup() {
+    async signup() {
       if(this.name=='' || this.email=='' || this.contact=='' || this.password==''){
-        alert('Please Fill ALl The Coloums Properly')
+        alert('Please Fill All The Coloums Properly')
       }
-      // else{
-        
-      //   }
-
-        // alert('You Are Succesfully Logged In')
-        // this.$router.push({name: 'Login', query: { redirect: '/path' }})
+      else{
+        let result = await axios.post('http://localhost:3000/user',{
+            name: this.name,
+            email: this.email,
+            password:this.password,
+            contact:this.contact
+          })
+           this.name = '';
+           this.email = '';
+           this.password = '';
+           this.contact = '';
+           if(result.status==201){
+              //  localStorage.setItem('user-info',JSON.stringify(result.data))
+               this.$router.push({name:'Login'})
+               alert('Sign Up Done Succesfully');
+            }
+      }
       }
     },
+    mounted(){
+      if ("user-info" in localStorage) {
+          alert('You are already logged in');
+          this.$router.push({name:'HomePage'})
+      } 
+    }
   }
 </script>
 
