@@ -20,6 +20,13 @@
       "contact": "gbvfedw",
       "password": "gfredw",
       "id": 3
+    },
+    {
+      "name": "rishi",
+      "email": "rishi@gmail.com",
+      "password": "r123",
+      "contact": "765432",
+      "id": 4
     }
   ]
 }
